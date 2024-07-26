@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrera</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .carrito {
+        height: 100vh;
+        width: 100%;
+        background-image: url(OED6.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 100vw;
+      }
+      .carrito .carro {
+        position: absolute;
+        top: 450px;
+        left: 400px;
+        width: 430px;
+        z-index: 40;
+      }
+      .carrito .carro img{
+        width: 100%;
+      }
+      .freno {
+        position: relative;
+        width: 250px;
+        z-index: 51;
+      }
+      .acelerar {
+        position: relative;
+        height: 250px;
+        z-index: 52;
+        left: 65%;
+      }
+      .carritoStatic {
+        height: 100vh;
+        width: 100%;
+        background-image: url(Estatic.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        z-index: 50;
+      }
+      .carrito button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .botonGasolina {
+        position: absolute;
+        z-index: 53;
+        width: 200px;
+        left: 83%;
+        top: 390px;
+      }
+      .botonGasolina img {
+        width: 100%;
+      }
+      .tanqueo {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        position: absolute;
+        background-image: url(combustible.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: 1s;
+      }
+      .tanqueo img{
+        position: absolute;
+        top: 400px;
+        left: 350px;
+        z-index: 1;
+      }
+      .burbuja{
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 100;
+        width: 300px;
+        height: 50px;
+        position: absolute;
+        z-index: 100;
+        border: solid px black;
+        top: 240px;
+        left: 35%;
+        color: white;
+        font-size: 25px;
+        font-weight: 900;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .burbuja2{
+        position: absolute;
+        width: 400px;
+        height: 50px;
+        background-color: black;
+        z-index: 99;
+        left: 32%;
+        top: 400px;
+        color: white;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="burbuja">
+        <span id="textoAcel" ></span>
+    </div>
+    <div  class="burbuja2">
+        <span id="burbujaInfo"></span>
+    </div>
+    <div id="estatic" class="carritoStatic">
+    </div>
+    <div class="carrito">
+      <button onclick="tanqueo()" class="botonGasolina">
+        <img src="Gasolina-removebg-preview.png" alt="" />
+      </button>
+      <button onclick="frenar()" class="freno">
+        <img src="Freno.png" alt="" />
+      </button>
+      <div class="carro">
+      <img onclick="estado()"  src="CarritoSF.gif" alt="" />
+    </div>
+      <button onclick="arrancar()" class="acelerar">
+        <img src="Acelerar.png" alt="" />
+      </button>
+    </div>
+    <div class="tanqueo">
+        <img onclick="estado()" class="carritoquieto" src="CarritoSFQuiet.png" alt="">
+    </div>
+  </body>
+  <script src="Carro2.js"></script>
+</html>
